@@ -1,0 +1,109 @@
+.composer {
+  $border-radius: 2px;
+  $outer-border: 1px solid hsla(0, 0%, 75%, 1);
+
+  width: 600px;
+
+  margin: 20px;
+  border-radius: $border-radius;
+
+  .handle-bar {
+    height: 30px;
+    background-color: hsla(240, 9%, 39%, 1);
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  .email-input {
+    @mixin bubble() {
+      background-color: hsla(0, 0%, 80%, 1);
+      padding: 0px 2px;
+      border-radius: $border-radius;
+    }
+
+    height: 30px;
+    border-left: $outer-border;
+    border-right: $outer-border;
+    position: relative;
+
+    .address {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-left: 5px;
+      }
+
+      .label {
+        @include bubble();
+        padding: 2px 6px;
+        height: 20px;
+        font-size: 0.8em;
+      }
+
+      input {
+        width: 100%;
+        padding: 2px 6px;
+        height: 20px;
+        font-size: 0.8em;
+      }
+    }
+
+    input {
+      height: 100%;
+      outline: none;
+      border: none;
+      font-size: 100%;
+    }
+
+    .suggestions {
+      position: absolute;
+      box-sizing: border-box;
+      box-shadow: 0px 3px 6px hsla(200, 8%, 15%, 0.5);
+      width: 100%;
+      z-index: 10;
+      background-color: white;
+      border: $outer-border;
+
+      .suggestion {
+        font-size: 0.8em;
+        padding: 5px 5px;
+
+        .value {
+          @include bubble();
+          margin-left: 10px;
+        }
+
+        cursor: pointer;
+
+        &:hover, &.hovered {
+          background-color: hsla(202, 52%, 65%, 1);
+        }
+      }
+    }
+  }
+
+  .button-bar {
+    padding: 8px;
+    background-color: hsla(216, 19%, 95%, 1);
+    border-bottom: $outer-border;
+    border-left: $outer-border;
+    border-right: $outer-border;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    &.right {
+      text-align: right;
+    }
+
+    button {
+      outline: none!important;
+      cursor: pointer;
+      background-color: hsla(236, 39%, 70%, 1);
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      padding: 5px 10px;
+    }
+  }
+}

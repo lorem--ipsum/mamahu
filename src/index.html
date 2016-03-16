@@ -1,14 +1,22 @@
 <!DOCTYPE HTML>
-<html lang="en" ng-app="composer">
+<html lang="en" ng-app="app">
 <head>
   <meta charset="utf-8">
   <title>Composer</title>
+  <link rel="stylesheet" type="text/css" href="app.css">
+
+
+  <!-- Ideally this would have been injected through Brunch, but
+    tinymce doesn't provide a module interface... This is SO 2015.
+  -->
+  <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
 
   <script src="/vendor.js"></script>
   <script src="/app.js"></script>
   <script>require('src/initialize');</script>
 </head>
-<body>
+<body ng-controller="appController as app">
+  <composer content="content"></composer>
 
 </body>
 </html>
