@@ -16,7 +16,16 @@
   <script>require('src/initialize');</script>
 </head>
 <body ng-controller="appController as app">
-  <composer content="content"></composer>
+  <button ng-click="newEmail()">New email !</button>
 
+  <div class="composers" layoutize="emails">
+    <composer
+      ng-class="{active: $parent.activeEmail === email}"
+      ng-click="$parent.activeEmail = email"
+      ng-repeat="email in emails"
+      ng-style="email.style"
+      content="email.content"
+    ></composer>
+  </div>
 </body>
 </html>

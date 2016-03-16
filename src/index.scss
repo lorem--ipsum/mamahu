@@ -2,4 +2,21 @@ body {
   font-family: sans-serif;
   margin: 0px;
   padding: 0px;
+
+  .composers {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    .composer {
+      position: absolute;
+      z-index: 1;
+
+      &.active {
+        z-index: 2;
+      }
+    }
+  }
 }
